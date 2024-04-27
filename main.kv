@@ -1,0 +1,209 @@
+<container>:
+	cols:1
+	padding:50
+	spacing:15
+	row_force_default: True
+	row_default_height: 100
+	size_hint_x:None
+	width:750
+	pos_hint:{"center_x":0.5}
+	
+	
+	response:response
+	urlInput:urlInput
+	responsemain:responsemain
+	data_one:data_one
+	value_one:value_one
+	data_two:data_two
+	value_two:value_two
+	filetype:filename
+	
+
+	GridLayout:
+		cols: 2
+		
+		Image:
+			source:"images/Python-Emblem.png"
+		Button:
+			text:"httpsRequests"
+			italic:True
+			font_size:"20sp"
+		
+	GridLayout:
+		cols:3
+		
+		Label:
+			text:"GET"
+			bold:True
+			font_size:"30sp"
+			size_hint:None,None
+			width:130
+			height:100
+		Label:
+			text:"request"
+			size_hint:None, None
+			height:50
+			width:120
+			
+			
+		TextInput:
+			id:response
+			size_hint:None,None
+			height:50
+			width:300
+			hint_text:"<Response [000] >"
+			
+	GridLayout:
+		cols:4
+		spacing:10
+		row_force_default: True
+		row_default_height: 50
+		
+		Button:
+			text:"request"
+			font_size:"25px"
+			on_press:root.request()
+		Button:
+			text:"req.text"
+			font_size:"25px"
+			on_press:root.requesttext()
+		Button:
+			text:"dir(req)"
+			font_size:"25px"
+			on_press:root.dir()
+		Button:
+			text:"req.headers"
+			font_size:"25px"
+			on_press:root.help()
+		Button:
+			text:'req.json'
+			font_size:"25px"
+			italic:True
+			bold:True
+			on_press:root.json()
+		Button:
+			text:"payload{ }"
+			font_size:"25px"
+			on_press:root.payl()
+		Button:
+			text:"req.content"
+			font_size:"25px"
+			on_press:root.content()
+		Button:
+			text:"_clearBoxes"
+			font_size:"25px"
+			on_press:root.clean()
+	
+	GridLayout:
+		cols:2
+		spacing:10
+		row_force_default: True
+		row_default_height: 50
+		
+		TextInput:
+			id:urlInput
+			hint_text:"http://url"
+			text:"http://0.0.0.0:8080/"
+			multiline:False
+		Button:
+			text:"post"
+			size_hint:None,None
+			width:100
+			height:50
+			on_press:root.postmethod()
+	
+	
+	GridLayout:
+		cols:1
+		row_force_default: True
+		row_default_height: 50
+		size_hint_y:None
+		height:100
+		
+		Label:
+			text:"syntex [[ payload = {'data':'value','data':'value'} ]]"
+			size_hint:None,None
+			width:600
+			height:50
+			italic:True
+			bold:True
+			
+			
+					
+	GridLayout:
+		cols:3
+		row_force_default: True
+		row_default_height: 50
+		
+		TextInput:
+			id:data_one
+			hint_text:"data"
+			text:"username"
+			multiline:False
+			
+		Label:
+			text:"::"
+			size_hint_x:None
+			width:50
+			
+		TextInput:
+			id:value_one
+			hint_text:"value"
+			text:""
+			multiline:False
+		
+		TextInput:
+			id:data_two
+			hint_text:"data"
+			text:"password"
+			multiline:False
+		
+		Label:
+			text:"::"
+			size_hint_x:None
+			width:50
+			
+		TextInput:
+			id:value_two
+			hint_text:"value"
+			text:""
+			multiline:False
+		
+	
+	GridLayout:
+		cols:2
+		spacing:10
+		row_force_default: True
+		row_default_height: 500
+		
+		TextInput:
+			id:responsemain
+			text:"response::txt"
+			
+		GridLayout:
+			cols:1
+			size_hint_x:None
+			width:200
+			spacing:10
+				
+			Button:
+				text:"Download"
+				size_hint:None,None
+				width:200
+				height:50
+				on_press:root.down()
+			TextInput:
+				id:filename
+				hint_text:"file with .ext"
+			Button:
+				text:"Delete"
+				size_hint:None,None
+				width:200
+				height:50
+				on_press:root.clean()
+			Button:
+				text:"req.cookies"
+				size_hint:None,None
+				width:200
+				height:50
+				on_press:root.cook()
