@@ -103,31 +103,33 @@
 		TextInput:
 			id:urlInput
 			hint_text:"http://url"
-			text:"http://0.0.0.0:8080/"
+			text:"http://0.0.0.0/8080/"
 			multiline:False
+			border_radius:25
+			radius: [15]
 		Button:
-			text:"post"
+			text:"post.json"
 			size_hint:None,None
-			width:100
+			width:150
 			height:50
 			on_press:root.postmethod()
 	
 	
-	GridLayout:
-		cols:1
-		row_force_default: True
-		row_default_height: 50
-		size_hint_y:None
-		height:100
-		
-		Label:
-			text:"syntex [[ payload = {'data':'value','data':'value'} ]]"
-			size_hint:None,None
-			width:600
-			height:50
-			italic:True
-			bold:True
-			
+	#GridLayout:
+#		cols:1
+#		row_force_default: True
+#		row_default_height: 50
+#		size_hint_y:None
+#		height:100
+#		
+#		Button:
+#			text:"syntax"
+#			size_hint:None,None
+#			width:600
+#			height:50
+#			italic:True
+#			bold:True
+#			
 			
 					
 	GridLayout:
@@ -138,7 +140,7 @@
 		TextInput:
 			id:data_one
 			hint_text:"data"
-			text:"username"
+			text:""
 			multiline:False
 			
 		Label:
@@ -155,7 +157,7 @@
 		TextInput:
 			id:data_two
 			hint_text:"data"
-			text:"password"
+			text:""
 			multiline:False
 		
 		Label:
@@ -207,3 +209,12 @@
 				width:200
 				height:50
 				on_press:root.cook()
+				
+		#GridLayout:
+#			cols:2
+#			row_force_default:True
+#			row_default_height:40
+#			
+#			Button:
+#				text:"go to post"
+#				on_press:root.navpost()
